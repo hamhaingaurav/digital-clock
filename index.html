@@ -1,0 +1,59 @@
+<html> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Digital Clock</title> 
+    <style type="text/css">
+        body{
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            font-size: 5rem;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+        }
+        #digital-clock{
+            border: 5px solid grey;
+            border-radius: 20px;
+            padding: 10px;
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+        }
+    </style>
+
+</head> 
+<body> 
+
+    <p id="digital-clock"></p>
+
+    <script type="text/javascript">
+
+        setInterval(() => {
+            let curTime = new window.Date()
+            // let curTime = new Date() //Also possible
+            let curHour = curTime.getHours()
+            let curMin = curTime.getMinutes()
+            let curSec = curTime.getSeconds()
+
+            curHour>12 ? curHour=curHour-12 : curHour
+
+            let time_string = `${curHour}:${curMin}:${curSec}`
+
+            document.getElementById('digital-clock').innerHTML = `Time - ${time_string}`
+
+        }, 1000)
+
+        // setInterval(function(){
+        //     let curTime = new Date()
+        //     let curHour = curTime.getHours()
+        //     let curMin = curTime.getMinutes()
+        //     let curSec = curTime.getSeconds()
+        //     document.getElementById('digital-clock').innerHTML = `Time - ${curHour}:${curMin}:${curSec}`
+        // }, 1000)
+
+    </script>
+  
+</body> 
+</html> 
