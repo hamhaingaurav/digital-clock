@@ -37,7 +37,9 @@
             let curMin = curTime.getMinutes()
             let curSec = curTime.getSeconds()
 
-            curHour>12 ? curHour=curHour-12 : curHour
+            curHour>12 ? curHour-=12 : curHour
+
+            curHour===0 ? curHour+=12 : curHour
 
             let time_string = `${curHour}:${curMin}:${curSec}`
 
